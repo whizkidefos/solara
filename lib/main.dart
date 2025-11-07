@@ -6,6 +6,9 @@ import 'package:google_fonts/google_fonts.dart';
 // Firebase Options
 import 'firebase_options.dart';
 
+// Core
+import 'core/constants/app_colors.dart';
+
 // Services
 import 'services/firebase_service.dart';
 import 'services/auth_service.dart';
@@ -20,6 +23,7 @@ import 'providers/favorite_provider.dart';
 
 // Screens
 import 'screens/splash_screen.dart';
+import 'screens/onboarding/onboarding_screen.dart';
 import 'screens/auth/login_screen.dart';
 import 'screens/auth/register_screen.dart';
 import 'screens/home_screen.dart';
@@ -68,24 +72,46 @@ class SolaraApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color(0xFF6366F1),
+            seedColor: AppColors.primary,
             brightness: Brightness.light,
+            primary: AppColors.primary,
+            secondary: AppColors.accent,
+            surface: AppColors.background,
+            error: AppColors.error,
           ),
+          scaffoldBackgroundColor: AppColors.scaffoldBackground,
           textTheme: GoogleFonts.poppinsTextTheme(),
           appBarTheme: AppBarTheme(
             elevation: 0,
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
+            backgroundColor: AppColors.background,
+            foregroundColor: AppColors.textPrimary,
             centerTitle: true,
             titleTextStyle: GoogleFonts.poppins(
               fontSize: 20,
               fontWeight: FontWeight.w600,
-              color: Colors.black,
+              color: AppColors.textPrimary,
+            ),
+          ),
+          inputDecorationTheme: InputDecorationTheme(
+            filled: true,
+            fillColor: AppColors.background,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(color: AppColors.border),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(color: AppColors.border),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(color: AppColors.primary, width: 2),
             ),
           ),
         ),
         home: const SplashScreen(),
         routes: {
+          '/onboarding': (context) => const OnboardingScreen(),
           '/login': (context) => const LoginScreen(),
           '/register': (context) => const RegisterScreen(),
           '/home': (context) => const HomeScreen(),
