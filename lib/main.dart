@@ -3,12 +3,22 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// Firebase Options
+import 'firebase_options.dart';
+
+// Services
 import 'services/firebase_service.dart';
 import 'services/auth_service.dart';
+
+// Providers
 import 'providers/auth_provider.dart';
 import 'providers/product_provider.dart';
 import 'providers/cart_provider.dart';
 import 'providers/order_provider.dart';
+import 'providers/notification_provider.dart';
+import 'providers/favorite_provider.dart';
+
+// Screens
 import 'screens/splash_screen.dart';
 import 'screens/auth/login_screen.dart';
 import 'screens/auth/register_screen.dart';
@@ -24,12 +34,14 @@ import 'screens/profile_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const SolaraApp());
 }
 
 class SolaraApp extends StatelessWidget {
-  const SolaraApp({Key? key}) : super(key: key);
+  const SolaraApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +49,7 @@ class SolaraApp extends StatelessWidget {
       providers: [
         // Services
         ChangeNotifierProvider(create: (_) => AuthService()),
-        
+
         // Providers
         ChangeNotifierProvider(
           create: (context) => AuthProvider(
@@ -47,6 +59,8 @@ class SolaraApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ProductProvider()),
         ChangeNotifierProvider(create: (_) => CartProvider()),
         ChangeNotifierProvider(create: (_) => OrderProvider()),
+        ChangeNotifierProvider(create: (_) => NotificationProvider()),
+        ChangeNotifierProvider(create: (_) => FavoriteProvider()),
       ],
       child: MaterialApp(
         title: 'Solara',
@@ -80,6 +94,7 @@ class SolaraApp extends StatelessWidget {
           '/checkout': (context) => const CheckoutScreen(),
           '/orders': (context) => const OrdersScreen(),
           '/complaints': (context) => const ComplaintsScreen(),
+          '/chat_screen': (context) => const ChatScreen(),
         },
       ),
     );

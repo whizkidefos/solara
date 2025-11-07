@@ -1,6 +1,11 @@
 // lib/screens/chat_screen.dart
+import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../services/message_service.dart';
+import '../models/message_model.dart';
+
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({Key? key}) : super(key: key);
+  const ChatScreen({super.key});
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -31,7 +36,6 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Chat with Vendor'),
-        subtitle: const Text('TechStore'),
       ),
       body: Column(
         children: [

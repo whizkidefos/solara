@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "511465971647",
+    "project_id": "solara-29b37",
+    "storage_bucket": "solara-29b37.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511465971647:android:02b498d64e47b4686c0b0a",
+        "android_client_info": {
+          "package_name": "com.company.solara"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5ePS4EuLcpnVqrUxRu8o9RNElwO_1j9s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511465971647:android:c56940d9799a7f366c0b0a",
+        "android_client_info": {
+          "package_name": "com.example.solara"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5ePS4EuLcpnVqrUxRu8o9RNElwO_1j9s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

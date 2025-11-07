@@ -1,6 +1,14 @@
 // lib/screens/checkout_screen.dart
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:uuid/uuid.dart';
+import '../providers/cart_provider.dart';
+import '../providers/order_provider.dart';
+import '../providers/auth_provider.dart';
+import '../models/order_model.dart';
+
 class CheckoutScreen extends StatefulWidget {
-  const CheckoutScreen({Key? key}) : super(key: key);
+  const CheckoutScreen({super.key});
 
   @override
   State<CheckoutScreen> createState() => _CheckoutScreenState();

@@ -5,9 +5,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import '../providers/auth_provider.dart';
 import '../providers/product_provider.dart';
 import '../providers/cart_provider.dart';
+import '../models/product_model.dart';
+import 'product_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -170,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Consumer<CartProvider>(
             builder: (context, cartProvider, _) {
-              if (cartProvider.itemCount == 0) return SizedBox.shrink();
+              if (cartProvider.itemCount == 0) return const SizedBox.shrink();
               return Positioned(
                 top: 0,
                 right: 0,
@@ -188,8 +190,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                );
-              };
+                ),
+              );
             },
           ),
         ],
