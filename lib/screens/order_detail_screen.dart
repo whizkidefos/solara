@@ -94,7 +94,7 @@ class OrderDetailScreen extends StatelessWidget {
                         ],
                       ),
                     );
-                  }).toList(),
+                  }),
                   const SizedBox(height: 24),
                   Divider(color: Colors.grey[300]),
                   const SizedBox(height: 24),
@@ -229,9 +229,7 @@ class OrderDetailScreen extends StatelessWidget {
           width: 50,
           height: 50,
           decoration: BoxDecoration(
-            color: isActive
-                ? const Color(0xFF6366F1)
-                : Colors.grey[300],
+            color: isActive ? const Color(0xFF6366F1) : Colors.grey[300],
             shape: BoxShape.circle,
           ),
           child: Center(child: icon),

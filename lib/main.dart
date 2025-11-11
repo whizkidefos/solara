@@ -10,7 +10,6 @@ import 'firebase_options.dart';
 import 'core/constants/app_colors.dart';
 
 // Services
-import 'services/firebase_service.dart';
 import 'services/auth_service.dart';
 
 // Providers
@@ -27,11 +26,9 @@ import 'screens/onboarding/onboarding_screen.dart';
 import 'screens/auth/login_screen.dart';
 import 'screens/auth/register_screen.dart';
 import 'screens/home_screen.dart';
-import 'screens/product_detail_screen.dart';
 import 'screens/cart_screen.dart';
 import 'screens/checkout_screen.dart';
 import 'screens/orders_screen.dart';
-import 'screens/order_detail_screen.dart';
 import 'screens/chat_screen.dart';
 import 'screens/complaints_screen.dart';
 import 'screens/profile_screen.dart';

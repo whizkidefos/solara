@@ -1,8 +1,5 @@
 // lib/screens/complaints_screen.dart
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import '../services/complaint_service.dart';
-import '../models/complaint_model.dart';
 
 class ComplaintsScreen extends StatefulWidget {
   final String? orderId;
@@ -131,8 +128,8 @@ class _ComplaintsScreenState extends State<ComplaintsScreen> {
                   onPressed: () {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
-                        content:
-                            Text('Complaint submitted. We will review it soon.'),
+                        content: Text(
+                            'Complaint submitted. We will review it soon.'),
                       ),
                     );
                     Navigator.of(context).pop();

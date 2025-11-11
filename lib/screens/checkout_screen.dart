@@ -1,11 +1,8 @@
 // lib/screens/checkout_screen.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uuid/uuid.dart';
 import '../providers/cart_provider.dart';
-import '../providers/order_provider.dart';
 import '../providers/auth_provider.dart';
-import '../models/order_model.dart';
 
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({super.key});
@@ -150,8 +147,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     _buildPriceRow(context, 'Subtotal',
                         '\$${cartProvider.totalPrice.toStringAsFixed(2)}'),
                     const SizedBox(height: 8),
-                    _buildPriceRow(
-                        context, 'Shipping', 'Free', isPositive: true),
+                    _buildPriceRow(context, 'Shipping', 'Free',
+                        isPositive: true),
                     const SizedBox(height: 8),
                     _buildPriceRow(context, 'Discount', '\$0.00'),
                     const SizedBox(height: 16),
@@ -176,7 +173,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   onPressed: () {
                     // TODO: Process order
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Order placed successfully!')),
+                      const SnackBar(
+                          content: Text('Order placed successfully!')),
                     );
                     cartProvider.clear();
                     Navigator.of(context).pushReplacementNamed('/orders');

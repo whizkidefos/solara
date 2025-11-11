@@ -1,8 +1,5 @@
 // lib/screens/chat_screen.dart
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import '../services/message_service.dart';
-import '../models/message_model.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
@@ -60,9 +57,8 @@ class _ChatScreenState extends State<ChatScreen> {
                         vertical: 8,
                       ),
                       decoration: BoxDecoration(
-                        color: isUser
-                            ? const Color(0xFF6366F1)
-                            : Colors.grey[200],
+                        color:
+                            isUser ? const Color(0xFF6366F1) : Colors.grey[200],
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(
